@@ -1,0 +1,7 @@
+{
+    "java.project.sourcePaths": [
+        "src/DesignPatterns/FactoryPattern",
+        "src/DesignPatterns/AbstractFactoryPattern",
+        "src/DesignPatterns/SingletonPattern"
+    ]
+}
