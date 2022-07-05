@@ -16,7 +16,7 @@ public class main {
 
        while(!quit)
        {
-           System.out.println("\nEnter your choice: ");
+           System.out.println("\nEnter your choice (0 to print instructions): ");
            choice = scanner.nextInt();
            scanner.nextLine();
 
@@ -32,7 +32,7 @@ public class main {
                     addContact();
                     break;
                 case 3: 
-                    editContact();
+                    updateContact();
                     break;
                 case 4:
                     removeContact();
@@ -59,30 +59,43 @@ public class main {
     }
 
     private static void addContact(){
-        System.out.println("Enter Contact name: ");
+        System.out.println("\nEnter Contact name: ");
         String name = scanner.nextLine();
         System.out.println("Enter Phone Number: ");
         String number = scanner.nextLine();
-        Contact contact = new Contact(name, number);
+
+        Contact contact = Contact.createContact(name, number);
         mobilePhone.addNewContact(contact);
     }
 
-    private static void editContact(){
-        System.out.println("Enter Contact name: ");
+    private static void updateContact(){
+        System.out.println("\nEnter Contact name: ");
         String name = scanner.nextLine();
-        Contact oldContact = mobilePhone.findContactByName(name);
+
+        Contact oldContact = mobilePhone.queryContact(name);
+
+        if(oldContact == null){
+            System.out.println("\nContact not found!");
+            return;
+        }
 
         System.out.println("Enter new Phone Number: ");
         String newNumber = scanner.nextLine();
+        Contact newContact = Contact.createContact(name, newNumber);
 
-        mobilePhone.updateExistingContact(oldContact, newNumber);
+        mobilePhone.updateContact(oldContact, newContact);
     }
 
     private static void removeContact(){
-        System.out.println("Enter Contact name: ");
+        System.out.println("\nEnter Contact name: ");
         String name = scanner.nextLine();
 
-        Contact contact = mobilePhone.findContactByName(name);
+        Contact contact = mobilePhone.queryContact(name);
+
+        if(contact == null){
+            System.out.println("Contact not found!");
+            return;
+        }
 
         mobilePhone.removeContact(contact);
     }
