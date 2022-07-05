@@ -1,4 +1,4 @@
-package src.arrayList;
+package GroceryList;
 
 import java.util.Scanner;
 
@@ -49,7 +49,7 @@ public class main {
     }
 
     
-    public static void printInstructions()
+    private static void printInstructions()
     {
         System.out.println("\n Choices: ");
         System.out.println("\t 0 - To print choice options.");
@@ -61,13 +61,13 @@ public class main {
         System.out.println("\t 6 - To quit the application");
     }
 
-    public static void addItem()
+    private static void addItem()
     {
         System.out.println("\nPlease enter the grocery item to add: ");
         groceryList.addGroceryItem(scanner.nextLine());
     }
 
-    public static void modifyItem()
+    private static void modifyItem()
     {
         System.out.println("\nPlease enter the item to modify: ");
         String item = scanner.nextLine();
@@ -76,13 +76,13 @@ public class main {
         groceryList.modifyGroceryList(item, replacementItem);
     }
 
-    public static void removeItem()
+    private static void removeItem()
     {
         System.out.println("\nPlease enter the item to remove: ");
         groceryList.removeGroceryListItem(scanner.nextLine());
     }
 
-    public static void searchForItem()
+    private static void searchForItem()
     {
         System.out.println("\nPlease enter the item number to search for: ");
         groceryList.findItem(scanner.nextLine());
