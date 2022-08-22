@@ -1,9 +1,13 @@
 {
     "java.project.sourcePaths": [
-        "src/arrayList/GroceryList",
+        "src/arrayList",
         "src/DesignPatterns/SingletonPattern",
+        "src/DesignPatterns/PrototypePattern",
         "src/DesignPatterns/FactoryPattern",
+        "src/DesignPatterns/BuilderPattern",
+        "src/DesignPatterns/AdapterPattern",
         "src/DesignPatterns/AbstractFactoryPattern",
-        "src/arrayList"
+        "src/AutoboxingUnboxing/BankingApplication",
+        "src/LinkedList/PlayList"
     ]
 }
